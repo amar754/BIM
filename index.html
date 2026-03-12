@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300&family=Jomhuria&family=Open+Sans:wght@300&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Work+Sans:wght@100;200;300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="BIM">
+        <div class="contenar">
+            <h1>BMI</h1>
+            <div class="main">
+                <div class="input">
+                    <form action="" id="form">
+                        <h3>inter your weight by KG : </h3>
+                        <input type="text" id="wight" value="" placeholder="60kg" required>
+                        <h3>inter your height by M : </h3>
+                        <input type="text" id="hight" value="" placeholder="1.76M" required>
+                        <div class="button">
+                            <button type="submit" id="calc">calculate</button>
+                            <button id="clear" type="button">clear</button>
+                        </div>    
+                    </form>
+                </div>
+                <div class="output">
+                    <h2>your BMI is : </h2>
+                    <h3 id="result"></h3>
+                    <h2>classification : </h2>
+                    <h3 id="classification"></h3>
+                </div>    
+            </div>
+            <div class="detals">
+                <div class="data">   
+                    <h3>BMI introduction</h3>
+                    <p>BMI is a measurement of a person's leanness or corpulence based on their height and weight, 
+                        and is intended to quantify tissue mass. It is widely used as a general indicator of whether 
+                        a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of 
+                        BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range 
+                        the value falls between. These ranges of BMI vary based on factors such as region and age, and are sometimes 
+                        further divided into subcategories such as severely underweight or very severely obese. 
+                        Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, 
+                        it is a useful indicator of whether any additional testing or action is required. 
+                        Refer to the table below to see the different categories based on BMI that are used by the calculator.</p>
+                    <h3>BMI table for adults</h3>
+                    <p>This is the World Health Organization's (WHO) recommended body weight based on BMI values for adults. 
+                        It is used for both men and women, age 20 or older.</p>
+                </div>         
+                <table>
+                    <tr>
+                        <th>Classification</th>
+                        <th>BMI range - kg/m2</th>
+                    </tr>
+                    <tr>
+                        <td>Thinness</td>
+                        <td>less than 18</td>
+                    </tr>
+                    <tr>
+                        <td>perfect weight</td>
+                        <td>18.5 - 25</td>
+                    </tr>
+                    <tr>
+                        <td>overweight</td>
+                        <td>25 - 30</td>
+                    </tr>
+                    <tr>
+                        <td>first class obesity</td>
+                        <td>30 - 35</td>
+                    </tr>
+                    <tr>
+                        <td>second class obesity</td>
+                        <td>35 - 40</td>
+                    </tr>
+                    <tr>
+                        <td>dangerus obesity</td>
+                        <td> more than 40</td>
+                    </tr>
+                    </table>
+                    
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>created by <span>ULCS</span> combany All Right Reserved © 2024</p>
+        <div class="sosial">
+            <a href="https://www.facebook.com/amar.baktout/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="01027958582" target="_blank" ><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </footer>
+</body>
+<script>
+    let form = document.getElementById("form")
+    form.addEventListener("submit",function(e){
+        e.preventDefault()
+    })
+
+    document.getElementById("calc").addEventListener("click",function(){
+        let wight = document.getElementById("wight").value
+        let hight = document.getElementById("hight").value
+        let BMI =  wight/ (hight*hight)
+        document.getElementById("result").innerHTML= BMI
+        let BMI_catigory = ""
+        if(BMI < 18){
+            BMI_catigory= "thin"
+        }else if(BMI < 24.9){
+            BMI_catigory= "perfect weight"
+        }
+        else if(BMI < 29.9){
+            BMI_catigory= "overweight"
+        }
+        else if(BMI < 34.9){
+            BMI_catigory= "first class obesity"
+        }
+        else if(BMI < 39.9){
+            BMI_catigory= "second class obesity"
+        }
+        else if(BMI > 39.9){
+            BMI_catigory= "dangerus obesity"
+        }
+        else{
+            BMI_catigory= "inter your data"
+        }
+        document.getElementById("classification").innerHTML = BMI_catigory
+    })
+    document.getElementById("clear").addEventListener("click",function(){
+        let wight = document.getElementById("wight").value=null
+        let hight = document.getElementById("hight").value=null
+    })
+</script>
+</html>
