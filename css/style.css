@@ -218,3 +218,20 @@ th, td {
     }
 }
 
+footer{
+    margin-top: 35px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #28465f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: #ffffff;
+    padding-bottom: 24px;
+}
+footer a{
+    color: #ffffff;
+    font-size: 24px;
+    margin-right: 10px
+}
