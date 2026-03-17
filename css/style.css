@@ -22,24 +22,27 @@ font-family: 'Work Sans', sans-serif;
 @media (min-width:992px){
     .contenar{
         width: 970px;
-        height: 100vh;
+        /* height: 100vh; */
     }
 }
 @media (min-width:1200px){
     .contenar{
         width: 1170px;
-        height: 100vh;
+        /* height: 100vh; */
     }
 }
 /* start  */
 /* end */
 html{
+
+}
+body{
     background:url(../pexels-pixabay-53404.jpg)no-repeat top center;
     background-size: cover;
 }
 /* start  */
 .BIM{
-    min-height: 934px;
+    /* min-height: 934px; */
 }
 .BIM h1{
     text-align: center;
